@@ -2,6 +2,7 @@
 import csv
 import sys
 import random
+import copy
 
 # Store number of random prompts to generate
 num_prompts = int(sys.argv[3])
@@ -56,8 +57,9 @@ def generate_random_prompt(prmpt, replacements_to_make):
 # Generate a number of random prompts as specified in the program arguments    
 def generate_random_prompts():
     i = 0
-    while i < num_prompts: 
-        generate_random_prompt(original_prompt, replacements)
+    while i < num_prompts:
+        replacements_list = copy.deepcopy(replacements)
+        generate_random_prompt(original_prompt, replacements_list)
         i += 1
 
 # Process the prompt given
