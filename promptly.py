@@ -4,7 +4,7 @@ import sys
 import random
 
 # Store number of random prompts to generate
-num_prompts = int(sys.argv[1])
+num_prompts = int(sys.argv[2])
 
 # Set up our data structures for the prompt
 replacements = []
@@ -12,9 +12,6 @@ replacements = []
 # Set up our data structures for the CSV files
 descriptors = []
 phrases = []
-
-# Provide prompt skeleton
-original_prompt = "You are a [Profession or role that requires coming up with new ideas] who has been tasked with [A type of problem or project / job to be done]. You have a degree in [Degree] and experience working at [Company, non-profit, or public institution], [Company, non-profit, or public institution], and [Company, non-profit, or public institution]. You now work at Mozilla, and your professional values include [Values that you would find that a Mozilla employee has], [Values that you would find that a Mozilla employee has], and [Values that you would find that a Mozilla employee has]. You have access to a library of articles and resources that have been shared with you by your team, and you are looking to find new insights and ideas from these resources. Following the word “Prompt >”, you will be given a question by one of your team members who is trying to find new insights from the library that you have access to. Respond as the persona above, with a goal of generating a brand new idea and citing your sources."
 
 # Test that phrases are properly saved
 def print_phrases(): 
@@ -77,6 +74,9 @@ def process_prompt(prompt):
         
 
 # Read in from our test csv file to store items
+prompt_file = open(sys.argv[1], 'r')
+original_prompt = prompt_file.read()
+
 with open('promptly_test.csv', newline='') as csv_file: 
     reader = csv.DictReader(csv_file)
     for row in reader:
