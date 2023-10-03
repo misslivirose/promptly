@@ -4,7 +4,7 @@ import sys
 import random
 
 # Store number of random prompts to generate
-num_prompts = int(sys.argv[2])
+num_prompts = int(sys.argv[3])
 
 # Set up our data structures for the prompt
 replacements = []
@@ -76,8 +76,8 @@ def process_prompt(prompt):
 # Read in from our test csv file to store items
 prompt_file = open(sys.argv[1], 'r')
 original_prompt = prompt_file.read()
-
-with open('promptly_test.csv', newline='') as csv_file: 
+csv_file_name = sys.argv[2]
+with open(csv_file_name, newline='') as csv_file: 
     reader = csv.DictReader(csv_file)
     for row in reader:
         try: 
