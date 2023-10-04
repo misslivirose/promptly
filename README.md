@@ -1,5 +1,6 @@
 
-![prompt ly](https://github.com/misslivirose/promptly/assets/4313320/9fb0ff71-e4b9-40f9-b346-1ff183fdadd4)
+![promptly](https://github.com/misslivirose/promptly/assets/4313320/756173c2-4ec8-4af4-bde5-034c5a345280)
+
 
 # Promptly - Quickly generate AI prompts from CSV files 
 Promptly is a python script for quickly generating AI prompts. The script takes in two files (a .txt file that contains a prompt "skeleton" and a CSV file that contains "descriptors" and "phrases"). 
